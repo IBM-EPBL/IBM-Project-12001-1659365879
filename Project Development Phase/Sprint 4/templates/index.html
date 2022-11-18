@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitty Admit Eligibility Predictor</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/styles.css") }}">
+    <!-- <link rel="stylesheet" href="../static/css/styles.css">-->
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.12/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <header class="uk-width-1-1">
+        <div class="heading uk-padding-small uk-width-1-1" uk-sticky>
+           <a href="#">University Admit Eligibility Predictor</a> 
+        </div>
+    </header>
+    <section class="uk-flex uk-flex-center uk-padding-large uk-width-1-1">
+        <div class="card uk-padding">
+            <div class="info uk-dark">Lets check whether you are eligible or not...<br />Enter the details below...</div>
+            <div class="uk-divider-icon"></div>
+            <div class="form">
+                <form action="/predict" method="post">
+                    <div class="label">
+                        <label for="gre">GRE Score</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="gre" id="gre" placeholder="Enter your score between 0 - 360" required/>
+                    </div>
+                    <div class="label">
+                        <label for="toefl">TOEFL Score</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="toefl" id="toefl" placeholder="Enter your TOEFL score between 0 - 120" required/>
+                    </div>
+                    <div class="label">
+                        <label for="rating">University Rating</label>
+                    </div>
+                    <div class="input">
+                        <select name="rating" id="rating" required>
+                            <option disabled>select a rating</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="label">
+                        <label for="sop">SOP</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="sop" id="sop" placeholder="Enter your SOP score between 0 - 5" required/>
+                    </div>
+                    <div class="label">
+                        <label for="lor">LOR</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="lor" id="lor" placeholder="Enter your LOR score between 0 - 5" required/>
+                    </div>
+                    <div class="label">
+                        <label for="cgpa">CGPA</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="cgpa" id="cgpa" placeholder="Enter your CGPA score between 0 - 10" required/>
+                    </div>
+                    <div class="label">
+                        <label for="research">Research</label>
+                    </div>
+                    <div class="input">
+                        <select name="research" id="research" required>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="btn uk-flex uk-flex-center uk-margin-top">
+                        <input type="submit" value="Check" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <footer class="uk-width-1-1">
+        <div class="heading uk-padding-small uk-width-1-1">
+          <a href="#">University Admit Eligibility Predictor</a> 
+       </div>
+   </footer>
+</body>
+<script src={{url_for("static",filename="js/scripts.js")}}></script>
+</html>
